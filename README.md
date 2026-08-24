@@ -53,7 +53,7 @@ With more time, I would replace the simple geometry with a properly optimized GL
 
 ## Live Demo
 
-Coming soon.
+https://fe-aa2-3d-experience.vercel.app/
 
 ## Author
 
