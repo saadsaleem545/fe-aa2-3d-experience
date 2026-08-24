@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Your First 3D Experience on the Web
 
-## Getting Started
+An interactive 3D product viewer built with Next.js, React Three Fiber, Three.js, and React Three Drei.
 
-First, run the development server:
+## What I Built
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I built a small interactive 3D product viewer that runs directly in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Users can:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Rotate and inspect the product with mouse or touch.
+- Zoom in and out.
+- Change the product color.
+- Turn automatic rotation on or off.
+- Use the experience comfortably on mobile devices.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The 3D scene uses simple geometry, lighting, shadows, and interactive controls to keep the experience lightweight while still demonstrating the core 3D workflow.
 
-## Learn More
+## Performance
 
-To learn more about Next.js, take a look at the following resources:
+I kept the scene intentionally lightweight by using simple 3D geometry instead of a large external model.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A few performance decisions I made:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Capped the device pixel ratio to reduce GPU workload.
+- Used a smaller 512×512 shadow map.
+- Used simple meshes and materials.
+- Disabled automatic animation when the user prefers reduced motion.
+- Used a lazy-loaded 3D component so the main page does not have to render the WebGL canvas during the initial server render.
+- Limited camera zoom distance to avoid unnecessary extreme rendering.
 
-## Deploy on Vercel
+The experience was tested on desktop and mobile widths, including touch interaction.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accessibility
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The color controls have accessible labels and visible focus states.
+
+The viewer also respects the browser's `prefers-reduced-motion` setting by disabling automatic movement when reduced motion is requested.
+
+## Built With
+
+- Next.js
+- React
+- TypeScript
+- Three.js
+- React Three Fiber
+- React Three Drei
+- Tailwind CSS
+
+## What I'd Add With More Time
+
+With more time, I would replace the simple geometry with a properly optimized GLB product model and add compressed textures. I would also add more product parts and material options while keeping the scene within a reasonable performance budget.
+
+## Live Demo
+
+Coming soon.
+
+## Author
+
+Saad Saleem
